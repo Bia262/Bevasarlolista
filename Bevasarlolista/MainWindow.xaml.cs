@@ -58,8 +58,20 @@ namespace wpf1217
             if (termekDG.SelectedItem != null)
             {
                 termekek.Remove((ItemModel)termekDG.SelectedItem);
-                termekDG.Items.Refresh();                
+                termekDG.Items.Refresh();
             }
+        }
+
+        private void atipus3(object sender, RoutedEventArgs e)
+        {
+            termekDG.ItemsSource = termekek.Where(x => x.Kategoria == "A")
+                .OrderByDescending(x => x.Osszesen).Take(3).ToList();
+        }
+
+        private void top5ossz(object sender, RoutedEventArgs e)
+        {
+            termekDG.ItemsSource = termekek
+                .OrderByDescending(x => x.Osszesen).Take(5).ToList();
         }
     }
 }
