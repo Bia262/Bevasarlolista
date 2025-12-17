@@ -43,6 +43,18 @@ namespace wpf1217
 
         private void hozzaadas(object sender, RoutedEventArgs e)
         {
+            var ujtermek = new Hozzáadás();
+            if (ujtermek.ShowDialog() == true)
+            {
+                termekek.Add(ujtermek.ujtermek);
+                termekDG.ItemsSource = termekek;
+                termekDG.Items.Refresh();
+            }
+
+        }
+
+        private void torles(object sender, RoutedEventArgs e)
+        {
 
         }
     }

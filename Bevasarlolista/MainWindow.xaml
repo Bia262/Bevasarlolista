@@ -18,7 +18,7 @@
             <GroupBox Header="Termékek" Margin="10">
                 <WrapPanel Margin="5">
                     <Button Content="Hozzáadás" Width="150" Margin="5" Click="hozzaadas"/>
-                    <Button Content="Törlés" Width="150" Margin="5" />
+                    <Button Content="Törlés" Width="150" Margin="5" Click="torles" />
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>

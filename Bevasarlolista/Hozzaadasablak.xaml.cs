@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using static wpf1217.MainWindow;
 
-namespace Bevasarlolista
+namespace wpf1217
 {
-    /// <summary>
-    /// Interaction logic for Hozzaadasablak.xaml
-    /// </summary>
-    public partial class Hozzaadasablak : Window
+
+    public partial class Hozzáadás : Window
     {
-        public Hozzaadasablak()
+
+        public ItemModel ujtermek;
+        public Hozzáadás()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ujtermek = new ItemModel(nev.Text, int.Parse(mennyiseg.Text), int.Parse(ar.Text), kategoria.Text);
+            DialogResult = true;
         }
     }
 }
