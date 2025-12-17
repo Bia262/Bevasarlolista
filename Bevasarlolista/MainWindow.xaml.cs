@@ -1,45 +1,33 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using static wpf1217.MainWindow;
 
-namespace Bevasarlolista
+namespace wpf1217
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-   
-
+    public partial class MainWindow : Window
+    {
         public class ItemModel
         {
-            public String Nev {  get; set; }
+            public String Nev { get; set; }
             public int Mennyiseg { get; set; }
-            public int Ar {  get; set; }
-            public String Kategoria { get; set; }
+            public int Ar { get; set; }
+            public string Kategoria { get; set; }
             public int Osszesen { get; set; }
 
-            public ItemModel(string nev, int mennyiseg, int ar, string kategoria, int osszesen)
+            public ItemModel(string nev, int mennyiseg, int ar, string kategoria)
             {
                 Nev = nev;
                 Mennyiseg = mennyiseg;
                 Ar = ar;
                 Kategoria = kategoria;
-                Osszesen = Mennyiseg*Ar;
+                Osszesen = mennyiseg * ar;
             }
         }
-    public partial class MainWindow : Window
-    {
-        List<ItemModel> termekek = new List<ItemModel>();
 
+        List<ItemModel> termekek = new List<ItemModel>();
         public MainWindow()
         {
             InitializeComponent();
+
             termekek.Add(new ItemModel("Tej", 5, 450, "A"));
             termekek.Add(new ItemModel("Kenyer", 10, 350, "B"));
             termekek.Add(new ItemModel("Sajt", 2, 1200, "A"));
@@ -50,7 +38,12 @@ namespace Bevasarlolista
             termekek.Add(new ItemModel("Kenyér", 1, 450, "B"));
             termekek.Add(new ItemModel("Tej", 12, 400, "A"));
             termekek.Add(new ItemModel("Sajt", 5, 1500, "D"));
-            dataGrid.ItemsSource = termekek;
+            termekDG.ItemsSource = termekek;
+        }
+
+        private void hozzaadas(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
