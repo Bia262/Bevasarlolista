@@ -11,7 +11,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" x:Name="dataGrid"/>
+        <DataGrid Grid.Row="0" x:Name="dataGrid" ColumnWidth="*"/>
         <ScrollViewer Grid.Row="1">
             <GroupBox Header="Termekek">
                 <WrapPanel Margin="5">
