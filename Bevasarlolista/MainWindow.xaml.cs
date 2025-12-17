@@ -55,7 +55,11 @@ namespace wpf1217
 
         private void torles(object sender, RoutedEventArgs e)
         {
-
+            if (termekDG.SelectedItem != null)
+            {
+                termekek.Remove((ItemModel)termekDG.SelectedItem);
+                termekDG.Items.Refresh();                
+            }
         }
     }
 }
