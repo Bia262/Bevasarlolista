@@ -13,14 +13,38 @@
             <RowDefinition Height="1*"/>
 
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" x:Name="termekDG" ColumnWidth="*"></DataGrid>
+        <DataGrid Grid.Row="0" x:Name="termekDG" ColumnWidth="*" ></DataGrid>
         <ScrollViewer Grid.Row="1">
             <GroupBox Header="Termékek" Margin="10">
                 <WrapPanel Margin="5">
+                    <Button Content="Adatok Betöltése" Width="150" Margin="5" Click="adatBe"/>
                     <Button Content="Hozzáadás" Width="150" Margin="5" Click="hozzaadas"/>
-                    <Button Content="Törlés" Width="150" Margin="5" Click="torles" />
-                    <Button Content="A típus 3 legdrágább" Width="150" Margin="5" Click="atipus3" />
-                    <Button Content="Top 5 összegzés" Width="150" Margin="5" Click="top5ossz" />
+                    <Button Content="Törlés" Width="150" Margin="5" Click="torles"/>
+                    <Button Content="A típus 3 legdrágább" Width="150" Margin="5" Click="tipus3leg"/>
+                    <Button Content="Top 5 összérték szerint" Width="150" Margin="5" Click="top5ossz"/>
+                    <Button Content="Kedvezményes összlista" Width="150" Margin="5" Click="kedvOssz"/>
+                    <Button Content="Ár szerint csökennő" Width="150" Margin="5" Click="arCsokk" />
+                    <Button Content="Minden D típus > 500 Ft?" Width="150" Margin="5" Click="dTipus500" />
+                    <Button Content="Név + összérték ABC" Width="150" Margin="5" Click="nevOsszABC" />
+                    <Button Content="Típus db + összérték" Width="150" Margin="5" Click="tipusOssz" />
+                    <Button Content="Típus átlagár" Width="150" Margin="5" Click="tipusAtlag" />
+                    <Button Content="Legnagyobb összérték kategóriánként" Width="150" Margin="5" Click="highestTotalByCategoryBtn"/>
+                    <Button Content="B+C típus, 1000Ft kisebb" Width="150" Margin="5" Click="bcEzerKisebb"/>
+                    <Button Content="500Ft felett, csoport szerint" Width="150" Margin="5" Click="felett500csoport"/>
+                    <Button Content="> 10 db és kisebb 1000 Ft" Width="150" Margin="5" Click="kevesebbMint10esKisebb1000"/>
+                    <Button Content="> Összérték nagyobb 2000Ft ABC" Width="150" Margin="5" Click="OsszN2000ABC"/>
+                    <Button Content="Terméknév + típus" Width="150" Margin="5" Click="termeknevTipusCsoportositas"/>
+                    <Button Content="Legértékesebb termék tipusonként + típus" Width="150" Margin="5" Click="LegertekesebbTipusonkent"/>
+                    <Button Content="Összesített darabszám típusonként" Width="150" Margin="5" Click="OsszesitettDbTipusonkent"/>
+                    <Button Content="Van 0ft-os termék?" Width="150" Margin="5" Click="nullaFt"/>
+                    <Button Content="Csak kenyerek" Width="150" Margin="5" Click="kenyerek"/>
+                    <Button Content="Megegyező ár" Width="150" Margin="5" Click="egyezoAr" />
+                    <TextBox x:Name="textBox" Width="150" Margin="5" TextChanged="Valtozas"></TextBox>
+                    <Button Content="Egyező termékek" Width="150" Margin="5" Click="egyezo"/>
+                    <Button Content="Nem C kategóriás" Width="150" Margin="5" Click="nemc"/>
+                    <Button Content="Név hossz szerinti termékek" Width="150" Margin="5" Click="nevHosszSzerint"/>
+                    <Button Content="A tipus Össz ár" Width="150" Margin="5" Click="aTipusOsszAr"/>
+                    <ProgressBar x:Name="priceProgressBar" Width="100" Height="20" Margin="10" Value="0"/>
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>
